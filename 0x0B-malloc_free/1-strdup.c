@@ -15,6 +15,8 @@ char *_strdup(char *str)
 	int i, x;
 	char *copie;
 
+	if (str == NULL)
+		return (NULL);
 	i = 0;
 
 	while (str[i] != '\0')
@@ -24,7 +26,7 @@ char *_strdup(char *str)
 
 	copie = (char *)malloc(sizeof(char) * (i + 1));
 
-	if (str == NULL || copie == NULL)
+	if (copie == NULL)
 		return (NULL);
 	for (x = 0; x < i; ++x)
 	{
